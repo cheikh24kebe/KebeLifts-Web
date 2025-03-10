@@ -287,3 +287,54 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+//chatbot AI
+document.addEventListener("DOMContentLoaded", function () {
+    const chatbot = document.getElementById("chatbot");
+    const openChat = document.getElementById("openChat");
+    const closeChat = document.getElementById("closeChat");
+    const chatMessages = document.getElementById("chatbotMessages");
+    const chatInput = document.getElementById("chatInput");
+    const sendChat = document.getElementById("sendChat");
+
+    openChat.addEventListener("click", () => chatbot.style.display = "block");
+    closeChat.addEventListener("click", () => chatbot.style.display = "none");
+
+    sendChat.addEventListener("click", function () {
+        const userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+
+        addMessage("You", userMessage);
+        chatInput.value = "";
+        
+        const response = getAIResponse(userMessage);
+        setTimeout(() => addMessage("Kebelifts AI", response), 1000);
+    });
+
+    function addMessage(sender, text) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("chat-message");
+        messageDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getAIResponse(userInput) {
+        const lowerInput = userInput.toLowerCase();
+        
+        const responses = {
+            "hello": "Hello! How can I help you with your fitness goals today?",
+            "weight loss": "For weight loss, focus on a calorie deficit, cardio, and strength training.",
+            "muscle": "I have some progam for you.",
+            "best training": "Our Core Coaching Package is the best for personalized training!",
+            "diet plan": "A balanced diet with protein, healthy fats, and carbs will help you reach your fitness goals!"
+        };
+        
+        for (const key in responses) {
+            if (lowerInput.includes(key)) {
+                return responses[key];
+            }
+        }
+        return "I'm not sure about that. Try asking about workouts, diet, or training plans!";
+    }
+});

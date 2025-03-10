@@ -65,12 +65,12 @@
             </div>
         </header>
 
-        <!-- Merchandise Section -->
+        <!-- Merchandise Section (Commented Out for Later Use) -->
+        <!--
         <section id="merchandise" class="py-5" aria-labelledby="merchandise">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Shop Our Merchandise</h2>
                 <div class="row">
-                    <!-- Merchandise Item 1 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="merchandise-card">
                             <div class="merchandise-image">
@@ -88,8 +88,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Merchandise Item 2 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="merchandise-card">
                             <div class="merchandise-image">
@@ -107,8 +105,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Merchandise Item 3 -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="merchandise-card">
                             <div class="merchandise-image">
@@ -128,7 +124,6 @@
                     </div>
                 </div>
 
-                <!-- View All Button -->
                 <div class="text-center mt-4">
                     <a href="merchandise.html" class="btn btn-outline-primary btn-lg" aria-label="View all merchandise">
                         View All Merchandise
@@ -137,6 +132,7 @@
                 </div>
             </div>
         </section>
+        -->
 
         <!-- About Section -->
         <section id="about" class="py-5" aria-labelledby="about">
@@ -167,10 +163,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-center">
                         <div class="trainer-image">
                             <img src="img/Kebelifts.jpeg" alt="Personal Trainer" class="img-fluid" />
                         </div>
+                        <!-- Social Media Links -->
+                        <ul class="social-links list-inline mt-3">
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/kebe_lifts/?hl=en" target="_blank" aria-label="Instagram">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" aria-label="Facebook">
+                                    <i class="fab fa-facebook fa-2x"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.youtube.com/@kebelifts" aria-label="YouTube">
+                                    <i class="fab fa-youtube fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -233,15 +247,15 @@
                     <div class="col-lg-4">
                         <div class="package-card">
                             <div class="package-header">
-                                <h3>Online Training</h3>
+                                <h3>Training Programs</h3>
                                 <div class="price">
-                                    <span class="amount">Custom</span>
-                                    <span class="period">pricing</span>
+                                    <span class="amount">Customized Programs</span>
                                 </div>
                             </div>
                             <div class="package-features">
                                 <ul>
-                                    <li>Personalized Training Program</li>
+                                    <li>Build Muscle and Strength ($49.99)
+                                    </li>
                                     <li>Unlimited Check-Ins & Feedback</li>
                                     <li>FaceTime Support During Training</li>
                                     <li>Exclusive Educational Resources</li>
@@ -254,6 +268,7 @@
             </div>
         </section>
 
+        
         <!-- Contact Section -->
         <section id="contact" class="py-5" aria-labelledby="contact">
             <div class="container">
@@ -284,6 +299,95 @@
                 </div>
             </div>
         </section>
+        
+          <!--Reviews Section -->
+        <section id="contact-reviews" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Left Side: Write a Review Form -->
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="section-title mb-4">Write a Review</h2>
+                        <form id="reviewForm" class="review-form">
+                            <div class="mb-3">
+                                <input type="text" id="reviewName" class="form-control" placeholder="Your Full Name" required aria-label="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <textarea id="reviewText" class="form-control" rows="4" placeholder="Your Review" required aria-label="Your Review"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+                        </form>
+                    </div>
+
+                    <!-- Right Side: Scrolling Reviews -->
+                    <div class="col-lg-6">
+                        <h2 class="section-title mb-4">What Our Clients Say</h2>
+                        <div class="reviews-container">
+                            <div class="reviews-scroll" id="reviewsScroll">
+                                <!-- Review 1 -->
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        "Kebelifts transformed my fitness journey! The personalized training and support are unmatched."
+                                    </div>
+                                    <div class="review-author">
+                                        <strong>— John Doe</strong>
+                                    </div>
+                                </div>
+                                <!-- Review 2 -->
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        "I love the Kebelifts merchandise! The hoodie is so comfortable and stylish."
+                                    </div>
+                                    <div class="review-author">
+                                        <strong>— Jane Smith</strong>
+                                    </div>
+                                </div>
+                                <!-- Review 3 -->
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        "The water bottle is my favorite! It's durable and eco-friendly."
+                                    </div>
+                                    <div class="review-author">
+                                        <strong>— Mike Johnson</strong>
+                                    </div>
+                                </div>
+                                <!-- Review 4 -->
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        "The gym bag is spacious and perfect for my workouts. Highly recommend!"
+                                    </div>
+                                    <div class="review-author">
+                                        <strong>— Sarah Lee</strong>
+                                    </div>
+                                </div>
+                                <!-- Review 5 -->
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        "The wristbands are a game-changer for my workouts. They absorb sweat perfectly."
+                                    </div>
+                                    <div class="review-author">
+                                        <strong>— Alex Brown</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chatbot Section -->
+        <div id="chatbot" class="chatbot-container">
+            <div class="chatbot-header" >
+                <h3>Chat with Kebelifts AI</h3>
+                <button id="closeChat" class="close-chat">×</button>
+            </div>
+            <div id="chatbotMessages" class="chatbot-messages" ></div>
+            <input type="text" id="chatInput" placeholder="Ask me anything about fitness..." />
+            <button id="sendChat" class="btn btn-dark">Send</button>
+        </div>
+        
+        <button id="openChat" class="btn btn-dark">💬 Chat with AI</button>
+
 
         <!-- Footer -->
         <footer class="footer py-4" aria-labelledby="footer">
@@ -319,4 +423,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Custom JS -->
         <script src="js/script.js"></script>
-    </bod
+    </body>

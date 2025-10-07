@@ -3,7 +3,7 @@ const programs = [
     {
         title: "Core Coaching Package",
         description: "14 personalized training sessions per month, weekly check-ins, and exclusive access to educational resources.",
-        image: "img/core-coaching.jpg", // Replace with your image path
+        image: "img/core-coaching.jpg",
         features: ["Personalized Training", "Nutrition Guidance", "Progress Tracking"],
         price: "$750/month",
         link: "#contact"
@@ -11,7 +11,7 @@ const programs = [
     {
         title: "Flex Coaching Package",
         description: "5 in-person training sessions per month, monthly check-ins, and tailored training programs.",
-        image: "img/flex-coaching.jpg", // Replace with your image path
+        image: "img/flex-coaching.jpg",
         features: ["In-Person Sessions", "Custom Programs", "Email Support"],
         price: "$349/month",
         link: "#contact"
@@ -19,34 +19,10 @@ const programs = [
     {
         title: "Online Training",
         description: "Customized online training programs with unlimited check-ins and FaceTime support.",
-        image: "img/online-training.jpg", // Replace with your image path
+        image: "img/online-training.jpg",
         features: ["Remote Coaching", "Flexible Scheduling", "Custom Pricing"],
         price: "Custom Pricing",
         link: "#contact"
-    }
-];
-
-const merchandise = [
-    {
-        title: "Kebelifts T-Shirt",
-        description: "High-quality cotton T-shirt with the Kebelifts logo. Available in multiple sizes and colors.",
-        image: "img/merch1.jpg", // Replace with your image path
-        price: "$29.99",
-        link: "#"
-    },
-    {
-        title: "Kebelifts Hoodie",
-        description: "Comfortable and stylish hoodie with the Kebelifts logo. Perfect for workouts or casual wear.",
-        image: "img/merch2.jpg", // Replace with your image path
-        price: "$49.99",
-        link: "#"
-    },
-    {
-        title: "Kebelifts Water Bottle",
-        description: "Durable and eco-friendly water bottle with the Kebelifts logo. Stay hydrated in style.",
-        image: "img/merch3.jpg", // Replace with your image path
-        price: "$19.99",
-        link: "#"
     }
 ];
 
@@ -75,6 +51,8 @@ const testimonials = [
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Kebelifts website initialized');
+    
     // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
@@ -84,14 +62,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load training programs
     loadPrograms();
 
-    // Load merchandise
-    loadMerchandise();
-
     // Load testimonials
     loadTestimonials();
 
     // Initialize contact form
     initContactForm();
+
+    // Initialize review system
+    initReviewSystem();
+
+    // Initialize newsletter
+    initNewsletter();
+
+    // Initialize chatbot
+    initChatbot();
+
+    // Initialize FAQ functionality
+    initFAQ();
+
+    // Initialize navbar functionality
+    initNavbar();
+
+    // Initialize smooth scrolling
+    initSmoothScrolling();
 });
 
 // Initialize scroll animations
@@ -106,7 +99,8 @@ function initAnimations() {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
     animatedElements.forEach(element => {
@@ -114,15 +108,16 @@ function initAnimations() {
     });
 }
 
-// Load training programs into the programs section
+// Load training programs
 function loadPrograms() {
     const programsContainer = document.querySelector('#programs .row');
+    if (!programsContainer) return;
 
     programs.forEach((program, index) => {
         const programHTML = `
             <div class="col-md-4 animate-on-scroll" data-animation="animate__fadeInUp" style="animation-delay: ${index * 0.2}s">
                 <div class="card program-card h-100">
-                    <img src="${program.image}" class="card-img-top" alt="${program.title}">
+                    <img src="${program.image}" class="card-img-top" alt="${program.title}" onerror="this.src='img/Kebelifts.jpeg'">
                     <div class="card-body">
                         <h5 class="card-title">${program.title}</h5>
                         <p class="card-text">${program.description}</p>
@@ -145,35 +140,12 @@ function loadPrograms() {
     });
 }
 
-// Load merchandise into the merchandise section
-function loadMerchandise() {
-    const merchandiseContainer = document.querySelector('#merchandise .row');
-
-    merchandise.forEach((item, index) => {
-        const merchandiseHTML = `
-            <div class="col-md-4 animate-on-scroll" data-animation="animate__fadeInUp" style="animation-delay: ${index * 0.2}s">
-                <div class="card merchandise-card h-100">
-                    <img src="${item.image}" class="card-img-top" alt="${item.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">${item.description}</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="price">${item.price}</span>
-                            <a href="${item.link}" class="btn btn-primary btn-sm">
-                                Buy Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        merchandiseContainer.insertAdjacentHTML('beforeend', merchandiseHTML);
-    });
-}
-
-// Load testimonials into the testimonials section
+// Load testimonials
 function loadTestimonials() {
     const testimonialsContainer = document.querySelector('.reviews-scroll');
+    if (!testimonialsContainer) return;
+
+    testimonialsContainer.innerHTML = '';
 
     testimonials.forEach((testimonial, index) => {
         const testimonialHTML = `
@@ -193,56 +165,48 @@ function loadTestimonials() {
 // Initialize contact form
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    if (!form) return;
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Get form data
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+        submitBtn.disabled = true;
+
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             package: document.querySelector('select').value,
-            message: document.getElementById('message').value
+            message: document.getElementById('message').value,
+            timestamp: new Date().toISOString()
         };
 
-        // Here you would typically send the form data to a server
-        // For now, we'll just log it and show a success message
-        console.log('Form submitted:', formData);
+        setTimeout(() => {
+            console.log('Form submitted:', formData);
+            
+            const submissions = JSON.parse(localStorage.getItem('contactSubmissions')) || [];
+            submissions.push(formData);
+            localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
 
-        // Show success message
-        alert('Thank you for your message! We will get back to you soon.');
-
-        // Reset form
-        form.reset();
+            showNotification('Thank you for your message! We will get back to you within 24 hours.', 'success');
+            form.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
     });
 }
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Add background to navbar on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
-    } else {
-        navbar.classList.remove('navbar-scrolled');
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Load saved reviews from localStorage
-    const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+// Initialize review system
+function initReviewSystem() {
+    const reviewForm = document.getElementById('reviewForm');
     const reviewsScroll = document.getElementById('reviewsScroll');
 
-    // Display saved reviews on page load
+    if (!reviewForm || !reviewsScroll) return;
+
+    const savedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
     savedReviews.forEach(review => {
         const newReview = document.createElement('div');
         newReview.classList.add('review-item');
@@ -253,50 +217,70 @@ document.addEventListener('DOMContentLoaded', function () {
         reviewsScroll.appendChild(newReview);
     });
 
-    // Handle form submission
-    const reviewForm = document.getElementById('reviewForm');
-    if (reviewForm) {
-        reviewForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting and refreshing the page
+    reviewForm.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-            // Get the values from the form
-            const name = document.getElementById('reviewName').value;
-            const review = document.getElementById('reviewText').value;
+        const name = document.getElementById('reviewName').value.trim();
+        const reviewText = document.getElementById('reviewText').value.trim();
 
-            // Save the review to localStorage
-            savedReviews.push({ name, text: review });
-            localStorage.setItem('reviews', JSON.stringify(savedReviews));
+        if (!name || !reviewText) {
+            showNotification('Please fill in all fields.', 'error');
+            return;
+        }
 
-            // Create a new review element
-            const newReview = document.createElement('div');
-            newReview.classList.add('review-item');
-            newReview.innerHTML = `
-                <div class="review-text">"${review}"</div>
-                <div class="review-author"><strong>— ${name}</strong></div>
-            `;
+        const review = { 
+            name, 
+            text: reviewText,
+            timestamp: new Date().toISOString()
+        };
 
-            // Append the new review to the reviews section
-            reviewsScroll.appendChild(newReview);
+        savedReviews.push(review);
+        localStorage.setItem('reviews', JSON.stringify(savedReviews));
 
-            // Clear the form fields
-            document.getElementById('reviewName').value = '';
-            document.getElementById('reviewText').value = '';
+        const newReview = document.createElement('div');
+        newReview.classList.add('review-item');
+        newReview.innerHTML = `
+            <div class="review-text">"${reviewText}"</div>
+            <div class="review-author"><strong>— ${name}</strong></div>
+        `;
 
-            // Optional: Scroll to the newly added review
-            newReview.scrollIntoView({ behavior: 'smooth' });
+        reviewsScroll.appendChild(newReview);
+        reviewForm.reset();
+        showNotification('Thank you for your review!', 'success');
+        newReview.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+}
+
+// Initialize newsletter
+function initNewsletter() {
+    const newsletterForm = document.getElementById("newsletterForm");
+    if (!newsletterForm) return;
+
+    newsletterForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        const subscriptions = JSON.parse(localStorage.getItem('newsletterSubscriptions')) || [];
+        subscriptions.push({
+            email: email,
+            subscribedAt: new Date().toISOString()
         });
-    }
-});
+        localStorage.setItem('newsletterSubscriptions', JSON.stringify(subscriptions));
 
-//Newsletter
-document.getElementById("newsletterForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents page reload
-    alert("Thank you for joining 'THE PERSISTER'! Keep an eye on your inbox for weekly insights.");
-    this.reset(); // Clears input field
-});
+        showNotification("Thank you for joining 'THE PERSISTER'! Keep an eye on your inbox for weekly insights.", 'success');
+        this.reset();
+    });
+}
 
-//chatbot AI
-document.addEventListener("DOMContentLoaded", function () {
+// Initialize chatbot
+function initChatbot() {
     const chatbot = document.getElementById("chatbot");
     const openChat = document.getElementById("openChat");
     const closeChat = document.getElementById("closeChat");
@@ -304,65 +288,224 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatInput = document.getElementById("chatInput");
     const sendChat = document.getElementById("sendChat");
 
-    openChat.addEventListener("click", () => chatbot.style.display = "block");
-    closeChat.addEventListener("click", () => chatbot.style.display = "none");
+    if (!chatbot || !openChat) return;
 
-    sendChat.addEventListener("click", function () {
+    openChat.addEventListener("click", () => {
+        chatbot.style.display = 'block';
+        openChat.style.display = 'none';
+        chatInput.focus();
+    });
+
+    if (closeChat) {
+        closeChat.addEventListener("click", () => {
+            chatbot.style.display = 'none';
+            openChat.style.display = 'block';
+        });
+    }
+
+    const sendMessage = () => {
         const userMessage = chatInput.value.trim();
         if (!userMessage) return;
 
-        addMessage("You", userMessage);
+        addChatMessage("You", userMessage);
         chatInput.value = "";
         
-        const response = getAIResponse(userMessage);
-        setTimeout(() => addMessage("Kebelifts AI", response), 1000);
-    });
+        showTypingIndicator();
+        
+        setTimeout(() => {
+            removeTypingIndicator();
+            const response = getAIResponse(userMessage);
+            addChatMessage("Kebelifts AI", response);
+        }, 1500);
+    };
 
-    function addMessage(sender, text) {
-        const messageDiv = document.createElement("div");
-        messageDiv.classList.add("chat-message");
-        messageDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
-        chatMessages.appendChild(messageDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+    if (sendChat) {
+        sendChat.addEventListener("click", sendMessage);
     }
 
-    function getAIResponse(userInput) {
-        const lowerInput = userInput.toLowerCase();
-        
-        const responses = {
-            "hello": "Hello! How can I help you with your fitness goals today?",
-            "weight loss": "For weight loss, focus on a calorie deficit, cardio, and strength training.",
-            "muscle": "I have some progam for you.",
-            "best training": "Our Core Coaching Package is the best for personalized training!",
-            "diet plan": "A balanced diet with protein, healthy fats, and carbs will help you reach your fitness goals!"
-        };
-        
-        for (const key in responses) {
-            if (lowerInput.includes(key)) {
-                return responses[key];
+    if (chatInput) {
+        chatInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                sendMessage();
             }
-        }
-        return "I'm not sure about that. Try asking about workouts, diet, or training plans!";
+        });
     }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    let faqItems = document.querySelectorAll(".faq-item");
+    setTimeout(() => {
+        addChatMessage("Kebelifts AI", "Hello! I'm your Kebelifts AI assistant. How can I help you with your fitness goals today?");
+    }, 1000);
+}
 
-    faqItems.forEach(item => {
-        item.addEventListener("click", function () {
-            this.classList.toggle("active");
+// Chatbot functions
+function addChatMessage(sender, text) {
+    const chatMessages = document.getElementById("chatbotMessages");
+    if (!chatMessages) return;
+
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("chat-message");
+    messageDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTypingIndicator() {
+    const chatMessages = document.getElementById("chatbotMessages");
+    if (!chatMessages) return;
+
+    const indicator = document.createElement("div");
+    indicator.id = "typing-indicator";
+    indicator.classList.add("chat-message", "typing");
+    indicator.innerHTML = `<strong>Kebelifts AI:</strong> <span class="typing-dots"><span>.</span><span>.</span><span>.</span></span>`;
+    chatMessages.appendChild(indicator);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const indicator = document.getElementById("typing-indicator");
+    if (indicator) {
+        indicator.remove();
+    }
+}
+
+function getAIResponse(userInput) {
+    const lowerInput = userInput.toLowerCase();
+    
+    const responses = {
+        "hello": "Hello! How can I help you with your fitness goals today?",
+        "hi": "Hi there! Ready to transform your fitness journey?",
+        "price": "We have several packages: Core Coaching at $750/month, Flex Coaching at $349/month, and custom online training programs. Which one interests you?",
+        "training": "We offer personalized training programs, 1:1 coaching sessions, and online training. What are your specific fitness goals?",
+        "weight loss": "For weight loss, I recommend a combination of strength training and cardio, along with proper nutrition. Our Core Coaching package includes personalized nutrition guidance!",
+        "muscle": "For muscle building, focus on progressive overload, proper nutrition with adequate protein, and consistency. Our programs are designed specifically for muscle growth!",
+        "thanks": "You're welcome! Let me know if you have any other questions about our training programs or services."
+    };
+    
+    for (const key in responses) {
+        if (lowerInput.includes(key)) {
+            return responses[key];
+        }
+    }
+    
+    return "I'm here to help with fitness and training questions! You can ask me about training programs, pricing, nutrition, or getting started. What would you like to know?";
+}
+
+// Initialize FAQ functionality
+function initFAQ() {
+    const faqItems = document.querySelectorAll(".accordion-button");
+    
+    faqItems.forEach(button => {
+        button.addEventListener('click', function() {
+            faqItems.forEach(item => {
+                if (item !== this) {
+                    item.classList.remove('active');
+                }
+            });
+            this.classList.toggle('active');
         });
     });
-});
+}
 
-
-// Navbar collapse
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse.classList.contains('show')) {
-            new bootstrap.Collapse(navbarCollapse).toggle();
+// Initialize navbar functionality
+function initNavbar() {
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
         }
     });
-});
+
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+}
+
+// Initialize smooth scrolling - FIXED
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            if (href === '#' || href === '') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+// Utility functions
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showNotification(message, type = 'info') {
+    const existingNotification = document.querySelector('.custom-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    const notification = document.createElement('div');
+    notification.className = `custom-notification alert alert-${type} alert-dismissible fade show`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        z-index: 9999;
+        min-width: 300px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        border: none;
+        border-radius: 10px;
+    `;
+    
+    notification.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.remove();
+        }
+    }, 5000);
+}
+
+// Initialize sample data
+function initializeSampleData() {
+    if (!localStorage.getItem('reviews')) {
+        const sampleReviews = [
+            {
+                name: "Sarah Johnson",
+                text: "Kebelifts completely transformed my approach to fitness. The personalized attention and expert guidance helped me achieve results I never thought possible!",
+                timestamp: new Date('2024-01-15').toISOString()
+            }
+        ];
+        localStorage.setItem('reviews', JSON.stringify(sampleReviews));
+    }
+}
+
+initializeSampleData();
+
+console.log('Kebelifts JavaScript loaded successfully!');

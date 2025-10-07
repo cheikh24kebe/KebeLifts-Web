@@ -1,472 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Transform your life with personalized training by Kebelifts. Available in DC, Maryland, and Virginia areas." />
-        <title>Kebelifts Training - Personal Training & Fitness</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transform your life with personalized training by Kebelifts. Available in DC, Maryland, and Virginia areas.">
+    <title>Kebelifts Training - Personal Training & Fitness</title>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
-        
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/style.css" />
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Condensed:wght@400;700&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    </head>
-    <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
-            <div class="container">
-                <a class="navbar-brand" href="#" aria-label="Kebelifts homepage">KebeLifts</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about" aria-label="About section">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#packages" aria-label="Training Packages section">Training Packages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact" aria-label="Contact section">Contact</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-
-                    </ul>
-                </div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Condensed:wght@400;700&display=swap">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">KebeLifts</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Training Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+                </ul>
             </div>
-        </nav>
-
-        <source src="videos/kebe.mp4" type="video/mp4">
-
-
-        <!-- Hero Section -->
-        <header id="hero" class="hero-section">
-            <video autoplay loop muted playsinline class="hero-video">
-                <source src="videos/kebe.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="container text-center">
-                <h1 class="display-1">TRANSFORM YOUR LIFE</h1>
-                <p class="lead">
-                    MAXIMIZE YOUR PHYSICAL POTENTIAL WITH PROGRAMS AND 1:1 TRAINING SESSIONS WITH KEBE. NOW OFFERING IN-PERSON TRAINING SESSIONS IN WASHINGTON, D.C., VIRGINIA, AND MARYLAND! 
-                </p>
-                
-                <a href="#packages" class="btn btn-primary btn-lg">VIEW PROGRAMS AND COACHING PACKAGES</a>
-            </div>
-        </header>
-
-
-        <!-- Merchandise Section (Commented Out for Later Use) -->
-        <!--
-        <section id="merchandise" class="py-5" aria-labelledby="merchandise">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Shop Our Merchandise</h2>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="merchandise-card">
-                            <div class="merchandise-image">
-                                <img src="img/gym.jpg" alt="Kebelifts T-Shirt" class="img-fluid" />
-                            </div>
-                            <div class="merchandise-body">
-                                <h3 class="merchandise-title">Kebelifts T-Shirt</h3>
-                                <p class="merchandise-description">
-                                    High-quality cotton T-shirt with the Kebelifts logo. Available in multiple sizes and colors.
-                                </p>
-                                <div class="merchandise-price">
-                                    <span class="amount">$29.99</span>
-                                </div>
-                                <a href="#" class="btn btn-primary btn-block" aria-label="Buy Kebelifts T-Shirt">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="merchandise-card">
-                            <div class="merchandise-image">
-                                <img src="img/gym.jpg" alt="Kebelifts Hoodie" class="img-fluid" />
-                            </div>
-                            <div class="merchandise-body">
-                                <h3 class="merchandise-title">Kebelifts Hoodie</h3>
-                                <p class="merchandise-description">
-                                    Comfortable and stylish hoodie with the Kebelifts logo. Perfect for workouts or casual wear.
-                                </p>
-                                <div class="merchandise-price">
-                                    <span class="amount">$49.99</span>
-                                </div>
-                                <a href="#" class="btn btn-primary btn-block" aria-label="Buy Kebelifts Hoodie">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="merchandise-card">
-                            <div class="merchandise-image">
-                                <img src="img/gym.jpg" alt="Kebelifts Water Bottle" class="img-fluid" />
-                            </div>
-                            <div class="merchandise-body">
-                                <h3 class="merchandise-title">Kebelifts Water Bottle</h3>
-                                <p class="merchandise-description">
-                                    Durable and eco-friendly water bottle with the Kebelifts logo. Stay hydrated in style.
-                                </p>
-                                <div class="merchandise-price">
-                                    <span class="amount">$19.99</span>
-                                </div>
-                                <a href="#" class="btn btn-primary btn-block" aria-label="Buy Kebelifts Water Bottle">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-4">
-                    <a href="merchandise.html" class="btn btn-outline-primary btn-lg" aria-label="View all merchandise">
-                        View All Merchandise
-                        <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-        -->
-
-        <!-- About Section -->
-        <section id="about" class="py-5">
-            <div class="container">
-                <div class="row">
-                    <!-- Left Side: Trainer Info & Credentials -->
-                    <div class="col-lg-6 trainer-info">
-                        <h2 class="section-title">Meet Your Trainer</h2>
-                        <p class="lead">
-                            With years of experience in personal training, I've helped 
-                            countless clients transform their lives through personalized 
-                            fitness programs. My approach combines scientific principles 
-                            with practical, achievable goals to ensure lasting results.
-                        </p>
-                        <div class="trainer-credentials">
-                            <!-- Certified Personal Trainer -->
-                            <div class="credential-item">
-                                <i class="fas fa-dumbbell"></i>
-                                <div>
-                                    <h3>Certified Personal Trainer</h3>
-                                    <p>NASM Certified with specializations in strength training and nutrition</p>
-                                </div>
-                            </div>
-                            <!-- Personalized Approach -->
-                            <div class="credential-item">
-                                <i class="fas fa-user-check"></i>
-                                <div>
-                                    <h3>Personalized Approach</h3>
-                                    <p>Custom training programs designed to meet your unique goals and fitness level</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Image, Social Links, and Training Philosophy -->
-                    <div class="col-lg-6 trainer-media">
-                        <!-- Trainer Image -->
-                        <div class="trainer-image">
-                            <img src="img/Kebelifts.jpeg" alt="Personal Trainer" class="img-fluid" />
-                        </div>
-
-                        <!-- Social Media Links -->
-                        <div class="social-links-wrapper">
-                            <ul class="social-links list-inline text-center mt-3">
-                                <li class="list-inline-item">
-                                    <a href="https://www.instagram.com/kebe_lifts/?hl=en" target="_blank" aria-label="Instagram">
-                                        <i class="fab fa-instagram fa-2x"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" aria-label="Facebook">
-                                        <i class="fab fa-facebook fa-2x"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://www.youtube.com/@kebelifts" aria-label="YouTube">
-                                        <i class="fab fa-youtube fa-2x"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Training Philosophy -->
-                        <div class="credential-item philosophy">
-                            <i class="fas fa-brain"></i>
-                            <div>
-                                <h3>Training Philosophy</h3>
-                                <p>
-                                    At <strong>Kebelifts</strong>, we believe in persistence.  
-                                    No challenge is too great, no goal too distant.  
-                                    With determination, we empower individuals to overcome obstacles,  
-                                    achieve wellness, and unlock their full potential.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Training Packages -->
-        <section id="packages" class="py-5 bg-light" aria-labelledby="packages">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Training Packages</h2>
-                <div class="row">
-
-                    <!-- Online Training Package -->
-                    <div class="col-lg-4">
-                        <div class="package-card">
-                            <div class="package-header">
-                                <h3>Training Programs</h3>
-                                <div class="price">
-                                    <span class="amount">Customized Programs</span>
-                                </div>
-                            </div>
-                            <div class="package-features">
-                                <ul>
-                                    <li>Build Muscle and Strength ($49.99)
-                                    </li>
-                                    <li>Advanced Body Building</li>
-                                </ul>
-                            </div>
-                            <a href="#contact" class="btn btn-outline-primary btn-block" aria-label="Get started with Online Training">Buy Now</a>
-                        </div>
-                    </div>
-                    <!-- Tier 1 Package -->
-                    <div class="col-lg-4">
-                        <div class="package-card">
-                            <div class="package-header">
-                                <h3>Core Coaching Package</h3>
-                                <p class="tier">Tier 1</p>
-                                <div class="price">
-                                    <span class="amount">$750</span>
-                                    <span class="period">/month</span>
-                                </div>
-                            </div>
-                            <div class="package-features">
-                                <ul>
-                                    <li>14 Personalized Training Sessions per Month</li>
-                                    <li>Weekly 30-minute Check-In Calls</li>
-                                    <li>Unlimited Email Access</li>
-                                    <li>Access to Customized Training Programs</li>
-                                    <li>15% Discount on Additional Services</li>
-                                    <li>Exclusive Access to Educational Resources</li>
-                                </ul>
-                            </div>
-                            <a href="#contact" class="btn btn-primary btn-block" aria-label="Get started with Core Coaching">Get Started</a>
-                        </div>
-                    </div>
-
-                    <!-- Tier 2 Package -->
-                    <div class="col-lg-4">
-                        <div class="package-card">
-                            <div class="package-header">
-                                <h3>Flex Coaching Package</h3>
-                                <p class="tier">Tier 2</p>
-                                <div class="price">
-                                    <span class="amount">$349</span>
-                                    <span class="period">/month</span>
-                                </div>
-                            </div>
-                            <div class="package-features">
-                                <ul>
-                                    <li>5 In-person Training Sessions per Month</li>
-                                    <li>Monthly 45-minute Check-In Call</li>
-                                    <li>Email Access Between Calls</li>
-                                    <li>Two Tailored Training Programs</li>
-                                </ul>
-                            </div>
-                            <a href="#contact" class="btn btn-outline-primary btn-block" aria-label="Get started with Flex Coaching">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <!-- Contact Section -->
-        <section id="contact" class="py-5" aria-labelledby="contact">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Get Started Today</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <form id="contactForm" class="contact-form" aria-labelledby="contact form">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Your Full Name" required aria-label="Your Name">
-                            </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required aria-label="Your Email">
-                            </div>
-                            <div class="mb-3">
-                                <select class="form-select" required aria-label="Select Package">
-                                    <option value="" disabled selected>Choose the best option</option>
-                                    <option value="tier1">Core Coaching Package - $750/month</option>
-                                    <option value="tier2">Flex Coaching Package - $349/month</option>
-                                    <option value="online">Online Training - Custom Pricing</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-          <!--Reviews Section -->
-        <section id="contact-reviews" class="py-5">
-            <div class="container">
-                <div class="row">
-                    <!-- Left Side: Write a Review Form -->
-                    <div class="col-lg-6 mb-4">
-                        <h2 class="section-title mb-4">Write a Review</h2>
-                        <form id="reviewForm" class="review-form">
-                            <div class="mb-3">
-                                <input type="text" id="reviewName" class="form-control" placeholder="Your Full Name" required aria-label="Your Name">
-                            </div>
-                            <div class="mb-3">
-                                <textarea id="reviewText" class="form-control" rows="4" placeholder="Your Review" required aria-label="Your Review"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit Review</button>
-                        </form>
-                    </div>
-
-                    <!-- Right Side: Scrolling Reviews -->
-                    <div class="col-lg-6">
-                        <h2 class="section-title mb-4">What Our Clients Say</h2>
-                        <div class="reviews-container">
-                            <div class="reviews-scroll" id="reviewsScroll">
-                                <!-- Review 1 -->
-                                <div class="review-item">
-                                    <div class="review-text">
-                                        "Kebelifts transformed my fitness journey! The personalized training and support are unmatched."
-                                    </div>
-                                    <div class="review-author">
-                                        <strong>— John Doe</strong>
-                                    </div>
-                                </div>
-                                <!-- Review 2 -->
-                                <div class="review-item">
-                                    <div class="review-text">
-                                        "I love the Kebelifts merchandise! The hoodie is so comfortable and stylish."
-                                    </div>
-                                    <div class="review-author">
-                                        <strong>— Jane Smith</strong>
-                                    </div>
-                                </div>
-                                <!-- Review 3 -->
-                                <div class="review-item">
-                                    <div class="review-text">
-                                        "The water bottle is my favorite! It's durable and eco-friendly."
-                                    </div>
-                                    <div class="review-author">
-                                        <strong>— Mike Johnson</strong>
-                                    </div>
-                                </div>
-                                <!-- Review 4 -->
-                                <div class="review-item">
-                                    <div class="review-text">
-                                        "The gym bag is spacious and perfect for my workouts. Highly recommend!"
-                                    </div>
-                                    <div class="review-author">
-                                        <strong>— Sarah Lee</strong>
-                                    </div>
-                                </div>
-                                <!-- Review 5 -->
-                                <div class="review-item">
-                                    <div class="review-text">
-                                        "The wristbands are a game-changer for my workouts. They absorb sweat perfectly."
-                                    </div>
-                                    <div class="review-author">
-                                        <strong>— Alex Brown</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Chatbot Section -->
-        <div id="chatbot" class="chatbot-container">
-            <div class="chatbot-header" >
-                <h3>Chat with Kebelifts AI</h3>
-                <button id="closeChat" class="close-chat">×</button>
-            </div>
-            <div id="chatbotMessages" class="chatbot-messages" ></div>
-            <input type="text" id="chatInput" placeholder="Ask me anything about fitness..." />
-            <button id="sendChat" class="btn btn-dark">Send</button>
         </div>
-        
-        <button id="openChat" class="btn btn-dark">💬 Chat with AI</button>
+    </nav>
 
-        <!-- Newsletter Section -->
-        <section id="newsletter" class="newsletter-section py-5">
-            <div class="container text-center">
-                <h2 class="section-title">Join My Newsletter! <span class="highlight">THE PERSISTER</span></h2>
-                <p class="lead">
-                    Discover my training philosophy by subscribing to my newsletter.  
-                    Each week, you'll gain valuable insights in just <strong>10 sentences</strong>—concise, impactful, and easy to read.  
-                    Join today and see how small, consistent doses of inspiration can make a big difference!
-                </p>
-                
-                <!-- Newsletter Form -->
-                <form id="newsletterForm" class="newsletter-form d-flex justify-content-center">
-                    <input type="email" class="form-control email-input" placeholder="Enter your email" required aria-label="Your Email">
-                    <button class="btn btn-primary subscribe-btn" type="submit">Subscribe</button>
-                </form>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="videos/kebe.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container text-center">
+            <h1 class="display-1">TRANSFORM YOUR LIFE</h1>
+            <p class="lead">
+                MAXIMIZE YOUR PHYSICAL POTENTIAL WITH PROGRAMS AND 1:1 TRAINING SESSIONS WITH KEBE. NOW OFFERING IN-PERSON TRAINING SESSIONS IN WASHINGTON, D.C., VIRGINIA, AND MARYLAND! 
+            </p>
+            <a href="#packages" class="btn btn-primary btn-lg">VIEW PROGRAMS AND COACHING PACKAGES</a>
+        </div>
+    </header>
 
-
-        <!-- Footer -->
-        <footer class="footer py-4" aria-labelledby="footer">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="mb-0">© 2024 Kebelifts. All rights reserved.</p>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Side: Trainer Info & Credentials -->
+                <div class="col-lg-6 trainer-info">
+                    <h2 class="section-title">Meet Your Trainer</h2>
+                    <p class="lead">
+                        With years of experience in personal training, I've helped 
+                        countless clients transform their lives through personalized 
+                        fitness programs. My approach combines scientific principles 
+                        with practical, achievable goals to ensure lasting results.
+                    </p>
+                    <div class="trainer-credentials">
+                        <div class="credential-item">
+                            <i class="fas fa-dumbbell"></i>
+                            <div>
+                                <h3>Certified Personal Trainer</h3>
+                                <p>NASM Certified with specializations in strength training and nutrition</p>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <i class="fas fa-user-check"></i>
+                            <div>
+                                <h3>Personalized Approach</h3>
+                                <p>Custom training programs designed to meet your unique goals and fitness level</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <ul class="social-links list-inline mb-0 text-center text-md-end">
+                </div>
+
+                <!-- Right Side: Image, Social Links, and Training Philosophy -->
+                <div class="col-lg-6 trainer-media">
+                    <div class="trainer-image">
+                        <img src="img/Kebelifts.jpeg" alt="Personal Trainer" class="img-fluid">
+                    </div>
+
+                    <div class="social-links-wrapper">
+                        <ul class="social-links list-inline text-center mt-3">
                             <li class="list-inline-item">
-                                <a href="https://www.instagram.com/kebe_lifts/?hl=en" target="_blank" aria-label="Instagram">
-                                    <i class="fab fa-instagram"></i>
+                                <a href="https://www.instagram.com/kebe_lifts/?hl=en" target="_blank">
+                                    <i class="fab fa-instagram fa-2x"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" aria-label="Facebook">
-                                    <i class="fab fa-facebook"></i>
+                                <a href="#">
+                                    <i class="fab fa-facebook fa-2x"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="https://www.youtube.com/@kebelifts">
+                                    <i class="fab fa-youtube fa-2x"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
+                    <div class="credential-item philosophy">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <h3>Training Philosophy</h3>
+                            <p>
+                                At <strong>Kebelifts</strong>, we believe in persistence.  
+                                No challenge is too great, no goal too distant.  
+                                With determination, we empower individuals to overcome obstacles,  
+                                achieve wellness, and unlock their full potential.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-        
+        </div>
+    </section>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Custom JS -->
-        <script src="js/script.js"></script>
-    </body><!-- force redeploy -->
+    <!-- Training Packages -->
+    <section id="packages" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Training Packages</h2>
+            <div class="row">
+                <!-- Online Training Package -->
+                <div class="col-lg-4">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Training Programs</h3>
+                            <div class="price">
+                                <span class="amount">Customized Programs</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>Build Muscle and Strength ($49.99)</li>
+                                <li>Advanced Body Building</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-outline-primary btn-block">Buy Now</a>
+                    </div>
+                </div>
+                <!-- Tier 1 Package -->
+                <div class="col-lg-4">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Core Coaching Package</h3>
+                            <p class="tier">Tier 1</p>
+                            <div class="price">
+                                <span class="amount">$750</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>14 Personalized Training Sessions per Month</li>
+                                <li>Weekly 30-minute Check-In Calls</li>
+                                <li>Unlimited Email Access</li>
+                                <li>Access to Customized Training Programs</li>
+                                <li>15% Discount on Additional Services</li>
+                                <li>Exclusive Access to Educational Resources</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Tier 2 Package -->
+                <div class="col-lg-4">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Flex Coaching Package</h3>
+                            <p class="tier">Tier 2</p>
+                            <div class="price">
+                                <span class="amount">$349</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>5 In-person Training Sessions per Month</li>
+                                <li>Monthly 45-minute Check-In Call</li>
+                                <li>Email Access Between Calls</li>
+                                <li>Two Tailored Training Programs</li>
+                            </ul>
+                        </div>
+                        <a href="#contact" class="btn btn-outline-primary btn-block">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Get Started Today</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form id="contactForm" class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Choose the best option</option>
+                                <option value="tier1">Core Coaching Package - $750/month</option>
+                                <option value="tier2">Flex Coaching Package - $349/month</option>
+                                <option value="online">Online Training - Custom Pricing</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="contact-reviews" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Side: Write a Review Form -->
+                <div class="col-lg-6 mb-4">
+                    <h2 class="section-title mb-4">Write a Review</h2>
+                    <form id="reviewForm" class="review-form">
+                        <div class="mb-3">
+                            <input type="text" id="reviewName" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea id="reviewText" class="form-control" rows="4" placeholder="Your Review" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+                    </form>
+                </div>
+
+                <!-- Right Side: Scrolling Reviews -->
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">What Our Clients Say</h2>
+                    <div class="reviews-container">
+                        <div class="reviews-scroll" id="reviewsScroll">
+                            <!-- Reviews will be loaded here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Join My Newsletter! <span class="highlight">THE PERSISTER</span></h2>
+            <p class="lead">
+                Discover my training philosophy by subscribing to my newsletter.  
+                Each week, you'll gain valuable insights in just <strong>10 sentences</strong>—concise, impactful, and easy to read.  
+                Join today and see how small, consistent doses of inspiration can make a big difference!
+            </p>
+            
+            <!-- Newsletter Form -->
+            <form id="newsletterForm" class="newsletter-form d-flex justify-content-center">
+                <input type="email" class="form-control email-input" placeholder="Enter your email" required>
+                <button class="btn btn-primary subscribe-btn" type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>Chat with Kebelifts AI</h3>
+            <button id="closeChat" class="close-chat">×</button>
+        </div>
+        <div id="chatbotMessages" class="chatbot-messages"></div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Ask me anything about fitness...">
+            <button id="sendChat" class="btn btn-dark">Send</button>
+        </div>
+    </div>
+    
+    <button id="openChat" class="btn btn-dark chat-toggle">💬 Chat with AI</button>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© <span id="currentYear"></span> Kebelifts. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="social-links list-inline mb-0 text-center text-md-end">
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/kebe_lifts/?hl=en" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/@kebelifts">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

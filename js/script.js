@@ -288,6 +288,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+//Newsletter
+document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents page reload
+    alert("Thank you for joining 'THE PERSISTER'! Keep an eye on your inbox for weekly insights.");
+    this.reset(); // Clears input field
+});
+
 //chatbot AI
 document.addEventListener("DOMContentLoaded", function () {
     const chatbot = document.getElementById("chatbot");
@@ -337,4 +344,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return "I'm not sure about that. Try asking about workouts, diet, or training plans!";
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        item.addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    });
+});
+
+
+// Navbar collapse
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            new bootstrap.Collapse(navbarCollapse).toggle();
+        }
+    });
 });

@@ -509,3 +509,25 @@ function initializeSampleData() {
 initializeSampleData();
 
 console.log('Kebelifts JavaScript loaded successfully!');
+
+// Video fallback system
+function initVideoFallback() {
+    const video = document.querySelector('.hero-video');
+    if (video) {
+        video.addEventListener('error', function() {
+            console.log('Video failed to load, using background image');
+            // Use background image instead
+            document.querySelector('.hero-section').style.background = 
+                "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/Kebelifts.jpeg') center/cover no-repeat";
+            video.style.display = 'none';
+        });
+        
+        // Check if video loads successfully
+        video.addEventListener('loadeddata', function() {
+            console.log('Video loaded successfully!');
+        });
+    }
+}
+
+// Call this in your DOMContentLoaded
+// initVideoFallback();

@@ -53,7 +53,6 @@ body {
     color: var(--primary-color) !important;
 }
 
-/* Hero Section */
 .hero-section {
     position: relative;
     width: 100%;
@@ -62,23 +61,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -76px; /* Counteract body padding */
+    margin-top: -76px;
 }
 
-/* Background Video */
 .hero-video {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    /* Ensure video is visible */
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* Dark Overlay on Top of Video */
+/* Dark overlay */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -86,20 +85,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.4) 50%,
-        rgba(0, 0, 0, 0.8) 100%
-    );
+    background: rgba(0, 0, 0, 0.6); /* Slightly lighter overlay */
     z-index: 1;
 }
 
-/* Ensures Text Stays Above the Background */
+/* Ensure content stays above */
 .hero-section .container {
     position: relative;
     z-index: 2;
-    color: white;
 }
 
 .hero-section h1 {
